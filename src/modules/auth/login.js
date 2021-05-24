@@ -1,7 +1,6 @@
 import React from 'react';
 import useStyles from 'isomorphic-style-loader/useStyles';
 import { Form, Button, message, Input } from 'antd';
-import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { useDispatch } from 'react-redux';
 import { push as pushAction } from 'relient/actions/history';
 import { useForm } from 'relient-admin/hooks';
@@ -40,17 +39,19 @@ const result = () => {
           rules={[{ required: true }]}
           layout={layout}
           name="username"
+          label="帐号"
         >
-          <Input placeholder="帐号" type="text" size="large" prefix={<UserOutlined />} />
+          <Input type="text" size="large" />
         </Item>
         <Item
-          rules={[password]}
+          rules={[password, { required: true }]}
           layout={layout}
           name="password"
+          label="密码"
         >
-          <Input placeholder="密码" type="password" size="large" prefix={<LockOutlined />} />
+          <Input type="password" size="large" />
         </Item>
-        <Item className={s.Operation}>
+        <Item className={s.Operation} wrapperCol={{ push: 8, span: 8 }}>
           <Button size="large" loading={submitting} className={s.Submit} type="primary" htmlType="submit">
             登录
           </Button>

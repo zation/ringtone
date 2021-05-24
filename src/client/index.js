@@ -13,6 +13,7 @@ import getConfig from 'relient/config';
 import App from 'shared/components/app';
 import routes from 'modules/routes';
 import i18n from 'relient/i18n';
+import relientAdminMessageCN from 'relient-admin/messages/cn';
 import history from './history';
 import store from './store';
 
@@ -23,7 +24,7 @@ const domainContext = {
   apiDomain: `${global.location.origin}/api`,
   cdnDomain: getConfig('cdnDomain'),
 };
-const i18nContext = i18n(global.messages, { ignoreNoMessageWarning: true });
+const i18nContext = i18n(relientAdminMessageCN, { ignoreNoMessageWarning: true });
 const baseUrlContext = getConfig('baseUrl');
 
 const insertCss = (...styles) => {
