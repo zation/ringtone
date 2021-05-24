@@ -1,11 +1,5 @@
 const routes = [
   {
-    path: '/auth',
-    chunks: ['auth'],
-    load: () => import(/* webpackChunkName: 'auth' */ 'modules/auth'),
-  },
-
-  {
     path: '/account',
     chunks: ['account'],
     requireAuth: true,
@@ -28,9 +22,8 @@ const routes = [
 
   {
     path: '/',
-    chunks: ['home'],
-    requireAuth: true,
-    load: () => import(/* webpackChunkName: 'home' */ 'modules/home'),
+    chunks: ['auth'],
+    load: () => import(/* webpackChunkName: 'auth' */ 'modules/auth'),
   },
 
   {
