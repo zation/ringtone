@@ -3,7 +3,8 @@ export default {
     ['import', { libraryName: 'antd', style: false }],
     ['lodash', { id: ['lodash'] }],
   ],
-  baseUrl: '/',
+  baseUrl: '/ringtone-demo/',
+  exportRoutes: ['/ringtone-demo/'],
   proxy: {
     from: ['/api'],
     target: 'http://localhost:9001',
