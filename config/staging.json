@@ -1,0 +1,6 @@
+{
+  "port": 3100,
+  "serverAPIDomain": "http://staging/api",
+  "cdnDomain": "https://static.com/",
+  "baseUrl": "/admin"
+}
