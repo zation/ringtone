@@ -54,7 +54,7 @@ const result = ({ selectedFeatureKeys, features, isCollapsed }) => {
     >
       <div className={s.Title}>
         <img src={logo} alt="Logo" className={s.Logo} />
-        {!isCollapsed && <h1>Relient Admin</h1>}
+        {!isCollapsed && <h1>铃声壁纸管理系统</h1>}
       </div>
 
       <Menu

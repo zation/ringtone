@@ -5,8 +5,8 @@ import clientConfig from 'relient/config/client-config';
 /* eslint-disable react/no-danger */
 
 const result = ({
-  title = 'Relient Admin',
-  description = 'Relient Admin',
+  title = '铃声壁纸管理系统',
+  description = '铃声壁纸管理系统',
   styles = [],
   scripts = [],
   messages,

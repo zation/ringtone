@@ -1,23 +1,12 @@
+import React from 'react';
+import Ringtone from './ringtone';
+
 const routes = [
   {
-    path: '/account',
-    chunks: ['account'],
+    path: '/ringtone',
+    chunks: ['modules'],
     requireAuth: true,
-    load: () => import(/* webpackChunkName: 'account' */ 'modules/account'),
-  },
-
-  {
-    path: '/personal',
-    chunks: ['personal'],
-    requireAuth: true,
-    load: () => import(/* webpackChunkName: 'personal' */ 'modules/personal'),
-  },
-
-  {
-    path: '/table',
-    chunks: ['table'],
-    requireAuth: true,
-    load: () => import(/* webpackChunkName: 'personal' */ 'modules/table'),
+    component: <Ringtone />,
   },
 
   {
@@ -27,9 +16,14 @@ const routes = [
   },
 
   {
+    path: '/auth/login',
+    chunks: ['auth'],
+    load: () => import(/* webpackChunkName: 'auth' */ 'modules/auth'),
+  },
+
+  {
     path: '/(.*)',
     chunks: ['not-found'],
-    requireAuth: true,
     load: () => import(/* webpackChunkName: 'not-found' */ 'modules/not-found'),
   },
 ];

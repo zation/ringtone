@@ -6,10 +6,10 @@ import { useDispatch } from 'react-redux';
 import { push as pushAction } from 'relient/actions/history';
 import { useForm } from 'relient-admin/hooks';
 import useRules from 'shared/hooks/use-rules';
-import { login as loginAction } from 'shared/actions/auth';
-import { HOME } from 'shared/constants/features';
-import Captcha from 'shared/components/captcha';
-import getPreloader from 'shared/utils/preloader';
+// import { login as loginAction } from 'shared/actions/auth';
+import { setAuthorization } from 'shared/actions/auth';
+import { RINGTONE } from 'shared/constants/features';
+// import getPreloader from 'shared/utils/preloader';
 import Layout from './layout';
 
 import s from './base.less';
@@ -23,11 +23,12 @@ const layout = {
 const result = () => {
   useStyles(s);
   const dispatch = useDispatch();
-  const { submit, submitting } = useForm(async (values) => {
-    const { account } = await dispatch(loginAction({ ...values }));
-    await Promise.all(getPreloader(account, dispatch));
+  const { submit, submitting } = useForm(async () => {
+    // const { account } = await dispatch(loginAction({ ...values }));
+    // await Promise.all(getPreloader(account, dispatch));
+    dispatch(setAuthorization('placeholder'));
     message.success('登录成功');
-    dispatch(pushAction(HOME));
+    dispatch(pushAction(RINGTONE));
   });
 
   const { password } = useRules();
@@ -49,20 +50,6 @@ const result = () => {
         >
           <Input placeholder="密码" type="password" size="large" prefix={<LockOutlined />} />
         </Item>
-        <div style={{ display: 'flex' }}>
-          <div style={{ flex: 1 }}>
-            <Item
-              rules={[{ required: true }]}
-              layout={layout}
-              name="captcha"
-            >
-              <Input placeholder="验证码" type="text" size="large" />
-            </Item>
-          </div>
-          <div className={s.Captcha}>
-            <Captcha height={40} />
-          </div>
-        </div>
         <Item className={s.Operation}>
           <Button size="large" loading={submitting} className={s.Submit} type="primary" htmlType="submit">
             登录

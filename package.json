@@ -1,5 +1,5 @@
 {
-  "name": "relient-admin-template",
+  "name": "ringtone",
   "version": "0.0.1",
   "engines": {
     "node": ">=14",
@@ -39,7 +39,8 @@
   },
   "resolutions": {
     "**/react": "^17.0.1",
-    "**/react-dom": "^17.0.1"
+    "**/react-dom": "^17.0.1",
+    "**/relient": "5.1.4"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",

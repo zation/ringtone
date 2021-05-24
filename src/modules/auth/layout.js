@@ -16,7 +16,7 @@ const result = ({
     <div className={s.Root}>
       <div className={s.Top}>
         <div className={s.Header}>
-          <span className={s.Title}>Relient Admin</span>
+          <span className={s.Title}>铃声壁纸管理系统</span>
         </div>
       </div>
       <div className={className}>

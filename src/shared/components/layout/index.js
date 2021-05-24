@@ -12,7 +12,7 @@ import { getWithBaseUrl } from 'relient/url';
 import relientAdminStyle from 'relient-admin/styles.css';
 import Sider from './sider';
 import globalStyle from './global_.less';
-import s from './layout.less';
+import s from './index.less';
 import Footer from './footer';
 import Header from './header';
 import selector from './layout-selector';
@@ -31,7 +31,7 @@ const result = ({
   const dispatch = useDispatch();
   const logout = useCallback(() => {
     dispatch(logoutAction());
-    global.document.location.replace(getWithBaseUrl('/auth/login', getConfig('baseUrl')));
+    global.document.location.replace(getWithBaseUrl('/', getConfig('baseUrl')));
   }, [logoutAction]);
   const [isCollapsed, setIsCollapsed] = useState(false);
   const toggleSider = useCallback(() => setIsCollapsed(!isCollapsed), [isCollapsed]);

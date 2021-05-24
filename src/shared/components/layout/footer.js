@@ -15,7 +15,7 @@ const result = ({ className }) => {
         <div>
           Copyright&nbsp;
           <CopyrightOutlined />
-          &nbsp;2020 Relient Admin All Rights Reserved.
+          &nbsp;2020 铃声壁纸管理系统 All Rights Reserved.
         </div>
       </div>
     </div>

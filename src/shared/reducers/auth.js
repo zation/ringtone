@@ -34,6 +34,7 @@ export default {
     [SET_AUTHORIZATION]: (auth, { payload }) => ({
       ...auth,
       authorization: payload,
+      isLogin: true,
     }),
 
     [REMOVE_AUTHORIZATION]: (auth) => ({ ...auth, authorization: null }),

@@ -16,7 +16,7 @@ export default ({ res, initialState = {} }) => createStore(
     serverError({
       onUnauthorized: () => {
         res.clearCookie(AUTHORIZATION);
-        res.redirect(302, getWithBaseUrl('/auth/login', getConfig('baseUrl')));
+        res.redirect(302, getWithBaseUrl('/', getConfig('baseUrl')));
       },
     }),
     logger,
